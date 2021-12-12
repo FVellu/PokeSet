@@ -24,6 +24,7 @@ while True:
 
                 for pokemon in lde.getPokemons(replayJson['log'], 1):
                     if(len(lde.getPokemonMovesP1(replayJson['log'], pokemon)) == 4):
+                        print(pokemon)
                         if pokemon not in data:
                             data[pokemon] = {}
                         for move in lde.getPokemonMovesP1(replayJson['log'], pokemon):
@@ -34,6 +35,7 @@ while True:
 
                 for pokemon in lde.getPokemons(replayJson['log'], 2):
                     if(len(lde.getPokemonMovesP2(replayJson['log'], pokemon)) == 4):
+                        print(pokemon)
                         if pokemon not in data:
                             data[pokemon] = {}
                         for move in lde.getPokemonMovesP2(replayJson['log'], pokemon):

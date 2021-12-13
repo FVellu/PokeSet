@@ -10,7 +10,7 @@ while True:
         replayList = requests.get("https://replay.pokemonshowdown.com/search.json?format=gen8ou").text
         replayList = json.loads(replayList)
         for gameData in replayList:
-            matchesFileR = open("matches", "r") 
+            matchesFileR = open("matches", "r")
             if gameData['id'] in matchesFileR.read():
                 pass
             else:
@@ -41,7 +41,7 @@ while True:
                         for move in lde.getPokemonMovesP2(replayJson['log'], pokemon):
                             if move not in data[pokemon]:
                                 data[pokemon].update({move: 1})
-                            else:   
+                            else:
                                 data[pokemon].update({move: data[pokemon][move] + 1})
 
                 w = open("dataset.json", "w")
@@ -52,7 +52,4 @@ while True:
             matchesFileR.close()
     except:
         print("JSONDecodeError, continuing")
-
-
-
     time.sleep(10)
